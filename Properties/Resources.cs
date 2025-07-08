@@ -11,7 +11,6 @@ using System.Globalization;
 using System.Resources;
 using System.Runtime.CompilerServices;
 
-#nullable disable
 namespace SimphonyPortraitMode.Properties
 {
   [GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]

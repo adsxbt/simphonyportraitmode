@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-#nullable disable
 namespace SimphonyPortraitMode
 {
   internal static class DisplayManager

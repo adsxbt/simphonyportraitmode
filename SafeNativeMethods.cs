@@ -6,7 +6,6 @@
 
 using System.Runtime.InteropServices;
 
-#nullable disable
 namespace SimphonyPortraitMode
 {
   internal static class SafeNativeMethods

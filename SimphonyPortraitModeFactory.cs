@@ -7,7 +7,6 @@
 using Micros.PosCore.Extensibility;
 using System;
 
-#nullable disable
 namespace SimphonyPortraitMode
 {
   internal class SimphonyPortraitModeFactory : IExtensibilityAssemblyFactory

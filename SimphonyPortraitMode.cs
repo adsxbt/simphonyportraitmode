@@ -11,7 +11,6 @@ using System;
 using System.Windows.Forms;
 using System.Drawing;
 
-#nullable disable
 namespace SimphonyPortraitMode
 {
   public class SimphonyPortraitMode : OpsExtensibilityApplication
