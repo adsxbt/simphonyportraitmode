@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PosCommonClasses">
+      <HintPath>lib\PosCommonClasses.dll</HintPath>
+    </Reference>
     <Reference Include="Ops">
       <HintPath>lib\Ops.dll</HintPath>
     </Reference>
