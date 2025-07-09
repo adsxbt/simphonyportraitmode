@@ -7,14 +7,14 @@ namespace SimphonyPortraitMode
 {
   internal class SimphonyPortraitModeFactory : IExtensibilityAssemblyFactory
   {
-    private static SimphonyPortraitMode.SimphonyPortraitMode singleton;
+    private static SimphonyPortraitMode singleton;
 
     public ExtensibilityAssemblyBase Create(IExecutionContext context)
     {
       try
       {
         if (SimphonyPortraitModeFactory.singleton == null)
-          SimphonyPortraitModeFactory.singleton = new SimphonyPortraitMode.SimphonyPortraitMode(context);
+          SimphonyPortraitModeFactory.singleton = new SimphonyPortraitMode(context);
         return (ExtensibilityAssemblyBase) SimphonyPortraitModeFactory.singleton;
       }
       catch (Exception ex)
@@ -24,7 +24,7 @@ namespace SimphonyPortraitMode
       }
     }
 
-    public static SimphonyPortraitMode.SimphonyPortraitMode GetInstance()
+    public static SimphonyPortraitMode GetInstance()
     {
       return SimphonyPortraitModeFactory.singleton;
     }
