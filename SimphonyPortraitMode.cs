@@ -1,12 +1,9 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: SimphonyPortraitMode.SimphonyPortraitMode
-// Assembly: SimphonyPortraitMode, Version=1.0.7537.14868, Culture=neutral, PublicKeyToken=null
-// MVID: 2F330B84-E650-4F53-871B-4CB699A44B8C
-// Assembly location: K:\DOCS\Téléchargements\SimphonyPortraitMode.dll
+﻿#nullable disable
 
 using Micros.Ops.Extensibility;
 using Micros.PosCore.Extensibility;
 using Micros.PosCore.Extensibility.Ops;
+using SimphonyPortraitMode.Properties;
 using System;
 using System.Windows.Forms;
 using System.Drawing;
@@ -48,10 +45,13 @@ namespace SimphonyPortraitMode
 
     private void CheckDisplayOrientationSub(Orientation orientation)
     {
-      if (DisplayManager.GetCurrentSettings().Orientation == orientation)
+      DisplaySettings currentSettings = DisplayManager.GetCurrentSettings();
+      if (currentSettings.Orientation == orientation)
+      {
+        currentOrientation = orientation;
         return;
+      }
       
-      currentOrientation = orientation;
       ApplyOrientation(orientation);
     }
 
@@ -59,11 +59,15 @@ namespace SimphonyPortraitMode
     {
       try
       {
-        DisplayManager.SetDisplaySettings(DisplayManager.GetCurrentSettings() with
+        DisplaySettings currentSettings = DisplayManager.GetCurrentSettings();
+        DisplaySettings newSettings = currentSettings with
         {
           Orientation = orientation
-        });
-        DisplayManager.RotateScreen(true);
+        };
+        DisplayManager.SetDisplaySettings(newSettings);
+        
+        // Mettre à jour l'orientation actuelle
+        currentOrientation = orientation;
         
         // Mettre à jour le texte du bouton
         UpdateRotationButtonText();
@@ -71,7 +75,7 @@ namespace SimphonyPortraitMode
       catch (Exception ex)
       {
         this.OpsContext.LogException(ex, nameof(ApplyOrientation));
-        MessageBox.Show($"Erreur lors de la rotation : {ex.Message}", "Erreur de rotation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(string.Format(Resources.UI_Error_RotationFailed, ex.Message), Resources.UI_Title_RotationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -132,15 +136,15 @@ namespace SimphonyPortraitMode
       switch (currentOrientation)
       {
         case Orientation.Default:
-          return "🖥️ Paysage";
+          return Resources.UI_RotationButton_Landscape;
         case Orientation.Clockwise90:
-          return "📱 Portrait";
+          return Resources.UI_RotationButton_Portrait;
         case Orientation.Clockwise180:
-          return "🔄 Inversé";
+          return Resources.UI_RotationButton_Inverted;
         case Orientation.Clockwise270:
-          return "📱 Portrait ↺";
+          return Resources.UI_RotationButton_Portrait270;
         default:
-          return "🔄 Rotation";
+          return Resources.UI_RotationButton_Portrait;
       }
     }
 
@@ -168,7 +172,7 @@ namespace SimphonyPortraitMode
     {
       Form orientationForm = new Form
       {
-        Text = "Sélectionner l'orientation de l'écran",
+        Text = Resources.UI_OrientationDialog_Title,
         Size = new Size(350, 280),
         StartPosition = FormStartPosition.CenterScreen,
         FormBorderStyle = FormBorderStyle.FixedDialog,
@@ -179,21 +183,21 @@ namespace SimphonyPortraitMode
 
       Label titleLabel = new Label
       {
-        Text = "Choisissez l'orientation souhaitée :",
+        Text = Resources.UI_OrientationDialog_Subtitle,
         Location = new Point(20, 20),
         Size = new Size(300, 30),
         Font = new Font("Arial", 10, FontStyle.Bold),
         ForeColor = Color.DarkBlue
       };
 
-      Button landscapeBtn = CreateOrientationButton("🖥️ Mode Paysage", new Point(20, 60), Orientation.Default);
-      Button portraitBtn = CreateOrientationButton("📱 Mode Portrait", new Point(180, 60), Orientation.Clockwise90);
-      Button invertedBtn = CreateOrientationButton("🔄 Mode Inversé", new Point(20, 120), Orientation.Clockwise180);
-      Button portrait270Btn = CreateOrientationButton("📱 Portrait 270°", new Point(180, 120), Orientation.Clockwise270);
+      Button landscapeBtn = CreateOrientationButton(Resources.UI_OrientationButton_Landscape, new Point(20, 60), Orientation.Default);
+      Button portraitBtn = CreateOrientationButton(Resources.UI_OrientationButton_Portrait, new Point(180, 60), Orientation.Clockwise90);
+      Button invertedBtn = CreateOrientationButton(Resources.UI_OrientationButton_Inverted, new Point(20, 120), Orientation.Clockwise180);
+      Button portrait270Btn = CreateOrientationButton(Resources.UI_OrientationButton_Portrait270, new Point(180, 120), Orientation.Clockwise270);
 
       Button cancelBtn = new Button
       {
-        Text = "Annuler",
+        Text = Resources.UI_Button_Cancel,
         Location = new Point(140, 180),
         Size = new Size(80, 30),
         DialogResult = DialogResult.Cancel
@@ -227,7 +231,7 @@ namespace SimphonyPortraitMode
         SaveOrientationChoice(orientation);
         
         ((Button)sender).FindForm().Close();
-        MessageBox.Show("Orientation appliquée avec succès !", "Rotation d'écran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        MessageBox.Show(Resources.UI_Msg_OrientationApplied, Resources.UI_Title_ScreenRotation, MessageBoxButtons.OK, MessageBoxIcon.Information);
       };
 
       return btn;
@@ -273,7 +277,15 @@ namespace SimphonyPortraitMode
     public SimphonyPortraitMode(IExecutionContext context)
       : base(context)
     {
-      currentOrientation = DisplayManager.GetCurrentSettings().Orientation;
+      try
+      {
+        currentOrientation = DisplayManager.GetCurrentSettings().Orientation;
+      }
+      catch (Exception ex)
+      {
+        currentOrientation = Orientation.Default;
+        this.OpsContext.LogException(ex, "SimphonyPortraitMode Constructor");
+      }
       
       this.OpsInitEvent += new OpsExtensibilityApplication.OpsInitEventDelegate(this.SimphonyPortraitMode_OpsInitEvent);
       this.OpsSignInEvent += new OpsExtensibilityApplication.OpsSignInEventDelegate(this.SimphonyPortraitMode_OpsSignInEvent);
