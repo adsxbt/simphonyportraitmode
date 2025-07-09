@@ -15,7 +15,6 @@ namespace SimphonyPortraitMode
     private Button rotationButton;
     private Form loginForm;
     private Orientation currentOrientation;
-    private bool manualRotationEnabled = true;
 
     public void CheckDisplayOrientation()
     {
@@ -242,7 +241,7 @@ namespace SimphonyPortraitMode
       try
       {
         string orientationValue = ((int)orientation).ToString();
-        this.DataStore.WriteExtensionDataValue("WORKSTATION", "KioskRotation", (long)this.OpsContext.WorkstationID, orientationValue);
+        this.DataStore.SetExtensionDataValue("WORKSTATION", "KioskRotation", (long)this.OpsContext.WorkstationID, orientationValue);
       }
       catch (Exception ex)
       {
@@ -305,7 +304,21 @@ namespace SimphonyPortraitMode
           // Créer le bouton de rotation sur la page d'accueil avec un délai
           System.Threading.Timer timer = new System.Threading.Timer((state) =>
           {
-            this.Invoke(() => CreateRotationButton());
+            try
+            {
+              if (loginForm?.InvokeRequired == true)
+              {
+                loginForm.Invoke((Action)(() => CreateRotationButton()));
+              }
+              else
+              {
+                CreateRotationButton();
+              }
+            }
+            catch (Exception ex)
+            {
+              this.OpsContext.LogException(ex, "CreateRotationButton Timer");
+            }
           }, null, 2000, System.Threading.Timeout.Infinite);
         }
         else
