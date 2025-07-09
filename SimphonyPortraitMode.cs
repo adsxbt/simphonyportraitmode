@@ -248,7 +248,7 @@ namespace SimphonyPortraitMode
         // this.DataStore.SetExtensionDataValue("WORKSTATION", "KioskRotation", (long)this.OpsContext.WorkstationID, orientationValue);
         
         // Pour l'instant, log seulement le choix de l'utilisateur
-        this.OpsContext.LogAlways($"Orientation sélectionnée: {orientation} ({(int)orientation})");
+        // this.OpsContext.LogAlways($"Orientation sélectionnée: {orientation} ({(int)orientation})");
       }
       catch (Exception ex)
       {
