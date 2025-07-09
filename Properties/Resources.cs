@@ -26,24 +26,24 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        if (SimphonyPortraitMode.Properties.Resources.resourceMan == null)
-          SimphonyPortraitMode.Properties.Resources.resourceMan = new ResourceManager("SimphonyPortraitMode.Properties.Resources", typeof (SimphonyPortraitMode.Properties.Resources).Assembly);
-        return SimphonyPortraitMode.Properties.Resources.resourceMan;
+        if (Resources.resourceMan == null)
+          Resources.resourceMan = new ResourceManager("SimphonyPortraitMode.Properties.Resources", typeof (Resources).Assembly);
+        return Resources.resourceMan;
       }
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     internal static CultureInfo Culture
     {
-      get => SimphonyPortraitMode.Properties.Resources.resourceCulture;
-      set => SimphonyPortraitMode.Properties.Resources.resourceCulture = value;
+      get => Resources.resourceCulture;
+      set => Resources.resourceCulture = value;
     }
 
     internal static string InvalidOperation_Disp_Change_BadDualView
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadDualView), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadDualView), Resources.resourceCulture);
       }
     }
 
@@ -51,7 +51,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadFlags), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadFlags), Resources.resourceCulture);
       }
     }
 
@@ -59,7 +59,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadMode), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadMode), Resources.resourceCulture);
       }
     }
 
@@ -67,7 +67,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadParam), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_BadParam), Resources.resourceCulture);
       }
     }
 
@@ -75,7 +75,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_Failed), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_Failed), Resources.resourceCulture);
       }
     }
 
@@ -83,7 +83,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_NotUpdated), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_NotUpdated), Resources.resourceCulture);
       }
     }
 
@@ -91,7 +91,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_Restart), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_Disp_Change_Restart), Resources.resourceCulture);
       }
     }
 
@@ -99,7 +99,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (InvalidOperation_FatalError), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (InvalidOperation_FatalError), Resources.resourceCulture);
       }
     }
 
@@ -107,7 +107,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (Msg_Disp_Change), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (Msg_Disp_Change), Resources.resourceCulture);
       }
     }
 
@@ -115,7 +115,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Original), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Original), Resources.resourceCulture);
       }
     }
 
@@ -123,7 +123,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Reset), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Reset), Resources.resourceCulture);
       }
     }
 
@@ -131,7 +131,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Rotate), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Rotate), Resources.resourceCulture);
       }
     }
 
@@ -139,7 +139,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Successful), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (Msg_Disp_Change_Successful), Resources.resourceCulture);
       }
     }
 
@@ -147,7 +147,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_RotationButton_Landscape), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_RotationButton_Landscape), Resources.resourceCulture);
       }
     }
 
@@ -155,7 +155,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_RotationButton_Portrait), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_RotationButton_Portrait), Resources.resourceCulture);
       }
     }
 
@@ -163,7 +163,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_RotationButton_Inverted), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_RotationButton_Inverted), Resources.resourceCulture);
       }
     }
 
@@ -171,7 +171,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_RotationButton_Portrait270), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_RotationButton_Portrait270), Resources.resourceCulture);
       }
     }
 
@@ -179,7 +179,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_OrientationDialog_Title), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_OrientationDialog_Title), Resources.resourceCulture);
       }
     }
 
@@ -187,7 +187,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_OrientationDialog_Subtitle), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_OrientationDialog_Subtitle), Resources.resourceCulture);
       }
     }
 
@@ -195,7 +195,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Landscape), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Landscape), Resources.resourceCulture);
       }
     }
 
@@ -203,7 +203,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Portrait), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Portrait), Resources.resourceCulture);
       }
     }
 
@@ -211,7 +211,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Inverted), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Inverted), Resources.resourceCulture);
       }
     }
 
@@ -219,7 +219,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Portrait270), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_OrientationButton_Portrait270), Resources.resourceCulture);
       }
     }
 
@@ -227,7 +227,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_Button_Cancel), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_Button_Cancel), Resources.resourceCulture);
       }
     }
 
@@ -235,7 +235,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_Msg_OrientationApplied), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_Msg_OrientationApplied), Resources.resourceCulture);
       }
     }
 
@@ -243,7 +243,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_Title_ScreenRotation), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_Title_ScreenRotation), Resources.resourceCulture);
       }
     }
 
@@ -251,7 +251,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_Error_RotationFailed), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_Error_RotationFailed), Resources.resourceCulture);
       }
     }
 
@@ -259,7 +259,7 @@ namespace SimphonyPortraitMode.Properties
     {
       get
       {
-        return SimphonyPortraitMode.Properties.Resources.ResourceManager.GetString(nameof (UI_Title_RotationError), SimphonyPortraitMode.Properties.Resources.resourceCulture);
+        return Resources.ResourceManager.GetString(nameof (UI_Title_RotationError), Resources.resourceCulture);
       }
     }
   }
