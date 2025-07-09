@@ -240,8 +240,15 @@ namespace SimphonyPortraitMode
     {
       try
       {
-        string orientationValue = ((int)orientation).ToString();
-        this.DataStore.SetExtensionDataValue("WORKSTATION", "KioskRotation", (long)this.OpsContext.WorkstationID, orientationValue);
+        // TODO: Investigation nécessaire pour trouver la bonne méthode d'écriture des données d'extension
+        // dans l'API Simphony. Les méthodes WriteExtensionDataValue et SetExtensionDataValue 
+        // ne semblent pas exister dans cette version de l'API.
+        
+        // string orientationValue = ((int)orientation).ToString();
+        // this.DataStore.SetExtensionDataValue("WORKSTATION", "KioskRotation", (long)this.OpsContext.WorkstationID, orientationValue);
+        
+        // Pour l'instant, log seulement le choix de l'utilisateur
+        this.OpsContext.LogAlways($"Orientation sélectionnée: {orientation} ({(int)orientation})");
       }
       catch (Exception ex)
       {
